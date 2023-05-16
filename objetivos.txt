@@ -1,0 +1,114 @@
+## No sistema serão aplicados filtros de mercado, submercados, seleções de apostas, partidas e times a fim de serem exibidas apostas lucrativas.
+
+# Qual foi o lucro nas apostas?
+- cálculo básico em relação ao valor investido e valor retornado, em termos absolutos e relativos (percentuais)
+
+# Qual período mais lucrativo ou prejudicias?
+- recorte de momentos específicos
+
+# Quais apostas mais lucrativas entre apostas no mercado ao vivo ou pré?
+- análise de apostas ao vivo ou pré-mercado
+
+# Qual é o mercado, submercado ou seleções de (apostas) submercados mais lucrativos?
+- o mercado onde se obteve maior lucro ou maior taxa de lucro
+-> Por exemplo: 
+    mercado: escanteios
+    submercado: total de escanteios, 
+    selecão (quantidade) mais de 10.5 escanteios.
+
+    mercado: resultado (match odds)
+    submercado: resultado final, 
+    selecão: casa vence
+
+
+# Quais times deram melhor resultado?
+- times que deram maiores retorno ao longo de um período
+
+# Quais partidas deram melhor resultado?
+- partidads entre times que deram maiores retorno ao longo de um período
+-> Por exemplo: 
+    - partidas entre times de nível semelhante/próximo
+    - partida entre times técnico completamente distintos
+    - com times em posições opostas na tabela 
+    - com times tradicionais
+
+
+
+
+Modelo MongoDB:
+
+`
+db={
+  "users": [
+    {
+      "_id": ObjectId("5a934e000102030405000000"),
+      "name": "João",
+      "email": "joao@mail.com"
+    },
+    {
+      "_id": ObjectId("5a934e000102030405060700"),
+      "name": "Maria",
+      "email": "maria@mail.com"
+    }
+  ],
+  "teams": [
+    {
+      "_id": ObjectId("5a934e000102030405ad456f"),
+      "name": "Palmeiras"
+    },
+    {
+      "_id": ObjectId("5a934e000102030405ad4560"),
+      "name": "Fortaleza"
+    }
+  ],
+  "betslips": [
+    {
+      "_id": ObjectId("5a987e100102030405ad456f"),
+      "user_id": "5a934e000102030405000000",
+      "bets": [
+        {
+          "bet_type": "ao vivo",
+          "fixture": {
+            "sport": "futebol",
+            "scheduledAt": "2023-05-17 21:00:00TZ",
+            "league": {
+              "name": "Copa do Brasil",
+              "country": "Brasil"
+            },
+            "teams": {
+              "home": "Palmeiras",
+              "away": "Fortaleza"
+            },
+            
+          },
+          "odd": 1.75,
+          "stake": 100,
+          "return": 175.00
+        },
+        {
+          "bet_type": "ao vivo",
+          "fixture": {
+            "sport": "futebol",
+            "scheduledAt": "2023-05-17 21:00:00TZ",
+            "league": {
+              "name": "Copa do Brasil",
+              "country": "Brasil"
+            },
+            "teams": {
+              "home": "Cruzeiro",
+              "away": "Gremio"
+            },
+            
+          },
+          "odd": 1.95,
+          "stake": 100,
+          "return": 195.00
+        },
+        
+      ],
+      "bettedAt": "2023-05-17 21:00:00TZ",
+      
+    }
+  ]
+}
+`

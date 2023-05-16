@@ -1,4 +1,18 @@
-import app from "./config/app";
+const express = require("express");
+
+const app = express();
+
+const PORT = 3000;
+
+// create a route for the app
+app.get("/", (req, res) => {
+  res.send("Hello dev.to!");
+});
+
+// server starts listening the `PORT`
+app.listen(PORT, () => {
+  console.log(`App running at: http://localhost:${PORT}/`);
+});
 
 const http = require("http");
 const https = require("https");
