@@ -16,7 +16,9 @@ app.get("/", (req, res) => {
 });
 // "start": "nodemon index.js",
 
-// app.listen(3000, () => {
+// const PORT = process.env.PORT || 3000;
+
+// app.listen(PORT, () => {
 //   console.log(`Server running at http://localhost:${PORT}`);
 // });
 
